@@ -227,11 +227,7 @@ NODE *LL_getNode(NODE *head, int letter)
 NODE *LL_init(int value)
 {
     NODE *head = malloc(sizeof(NODE));
-    head -> letter = 0;
-    head -> number = 0;
-    head -> bt_index = 0;
-    head -> amount = 0;
-    head -> next = 0;
+    memset(head, 0, sizeof(NODE));
     head->letter = value;
     head->amount = 1;
     return head;
