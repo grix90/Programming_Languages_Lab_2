@@ -139,6 +139,9 @@ void CRAR_findPermutations(char *expr, NODE *letters, unsigned int l, unsigned i
             {
                 return;
             }
+            tmpNum = nodeL->number;
+            nodeL->number = nodeI->number;
+            nodeI->number = tmpNum;
         }
     }
 }
