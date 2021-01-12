@@ -189,7 +189,12 @@ int CRAR_checkExpr(char *exprInLetters, NODE *letters)
     char *term = strtok(leftPart, "+");
     while (term != NULL)
     {
-        lCheck += strtol(term, NULL, 10);
+        int tmp = strtol(term, NULL, 10);
+        if (tmp >= rCheck)
+        {
+            return 0;
+        }
+        lCheck += tmp;
         term = strtok(NULL, "+");
     }
     if (lCheck == rCheck)
